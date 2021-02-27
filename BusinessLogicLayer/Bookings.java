@@ -1,8 +1,6 @@
 package BusinessLogicLayer;
 
-import java.sql.Date;
-import java.util.*;
-import java.time.*;
+import java.time.LocalDate;
 
 /**
  * Bookings
@@ -11,9 +9,9 @@ public class Bookings {
 
     public String EventType;
     public LocalDate EventDate;
-    public String[][] EventVenue = new String[1][2];
-    public int[][] PeopleCount = new int[1][2];
-    public String[][] Food = new String[1][4];
+    public String[][] EventVenue = new String[1][2];    //To capture address and contact number
+    public int[][] PeopleCount = new int[1][2];         //To capture adults and children counts
+    public String[][] Food = new String[1][4];          //To capture adult and kids meals and drinks
 
 
     
