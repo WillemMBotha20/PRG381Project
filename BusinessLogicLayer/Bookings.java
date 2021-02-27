@@ -15,6 +15,9 @@ public class Bookings {
     public int[][] PeopleCount = new int[1][2];
     public String[][] Food = new String[1][4];
 
+
+    
+
     public String getEventType()
     {
         return EventType;
@@ -65,6 +68,14 @@ public class Bookings {
         this.Food = Food;
     }
 
+    public Bookings(String event,LocalDate date,String[][]venue,int[][] people,String[][] food)
+    {
+        this.EventType = event;
+        this.EventDate = date;
+        this.EventVenue = venue;
+        this.PeopleCount = people;
+        this.Food = food;
+    };
     
 
 }
