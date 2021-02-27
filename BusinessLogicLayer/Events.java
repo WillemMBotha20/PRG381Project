@@ -16,7 +16,7 @@ public class Events {
     public String EventType;
     public LocalDateTime EventDate;
     public String VenueName;
-    public String VenueAddress;
+    public String VenueAddress;     //this will store venue address
     public String VenueContact;
     public int AdultCount;
     public int ChildCount;
