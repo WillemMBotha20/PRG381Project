@@ -1,13 +1,21 @@
 package BusinessLogicLayer;
 
+<<<<<<< HEAD
 import java.time.LocalDate;
 import java.util.List;
 
 /**
  * Bookings
  */
+=======
+>>>>>>> e6d7a7cbef5f375e39574227a4d30d56290c9dbc
 public class Bookings {
+    
+    public Bookings(){
+        
+    }
 
+<<<<<<< HEAD
     public String EventType;
     public LocalDate EventDate;
     public String[][] EventVenue = new String[1][2];    //To capture address and contact number
@@ -87,4 +95,6 @@ public class Bookings {
     };
     
 
+=======
+>>>>>>> e6d7a7cbef5f375e39574227a4d30d56290c9dbc
 }
