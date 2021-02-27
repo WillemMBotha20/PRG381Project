@@ -1,9 +1,9 @@
 package BusinessLogicLayer;
 
-/**
- * Bookings
- */
 public class Bookings {
+    
+    public Bookings(){
+        
+    }
 
-    //comment
 }
