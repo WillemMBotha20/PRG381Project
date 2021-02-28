@@ -12,14 +12,12 @@ public class Bookings {
         
     }
 
-
     public String EventType;
     public LocalDate EventDate;
     public String[][] EventVenue = new String[1][2];    //To capture address and contact number
     public int[][] PeopleCount = new int[1][2];         //To capture adults and children counts
     public String[][] Food = new String[1][4];          //To capture adult and kids meals and drinks
     public List<String> Decorations;
-    
 
     public String getEventType()
     {
