@@ -1,14 +1,14 @@
 package DataAccesLayer;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
 
+import BusinessLogicLayer.BookinsgCreated;
 import BusinessLogicLayer.Events;
 
 public class FileHandeler {
     private File fileLocal;
-    private Events dataStorage;
+    private Events dataStorage;    
 
     public FileHandeler(File fileLocal, Events dataStorage) {
         this.fileLocal = fileLocal;
@@ -16,19 +16,22 @@ public class FileHandeler {
     }
 
     public FileHandeler() {
-        
-    }    
-
-    public void fileWriteBookings() {
 
     }
 
-    public List<Events> fileReadBooking() throws FileNotFoundException {
-        List<Events> returnBookings = new ArrayList<Events>();
+    public void fileWriteBookings(BookinsgCreated booking) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileLocal, true));
+        String line = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s", booking.getClient().getCname(),booking.getClient().getCsurname(),booking.getClient().getCnumber(),booking.getClientEvent().getEventType(),booking.getClientEvent().getEventDate(),booking.getClientEvent().getVenueName(),booking.getClientEvent().getVenueAddress(),booking.getClientEvent().getVenueContact(),booking.getClientEvent().getAdultCount(),booking.getClientEvent().getChildCount());
+        writer.append(line);
+        writer.close();
+    }
+
+    public List<BookinsgCreated> fileReadBooking() throws FileNotFoundException {
+        List<BookinsgCreated> returnBookings = new ArrayList<BookinsgCreated>();
         Scanner sc = new Scanner(fileLocal);
 
         while(sc.hasNextLine()){
-            returnBookings.add(new Events());
+            returnBookings.add(new BookinsgCreated());
         }
 
         sc.close();
