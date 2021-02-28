@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-import BusinessLogicLayer.Bookings;
+import BusinessLogicLayer.Events;
 
 public class FileHandeler {
     private File fileLocal;
-    private Bookings dataStorage;
+    private Events dataStorage;
 
-    public FileHandeler(File fileLocal, Bookings dataStorage) {
+    public FileHandeler(File fileLocal, Events dataStorage) {
         this.fileLocal = fileLocal;
         this.dataStorage = dataStorage;
     }
@@ -23,12 +23,12 @@ public class FileHandeler {
 
     }
 
-    public List<Bookings> fileReadBooking() throws FileNotFoundException {
-        List<Bookings> returnBookings = new ArrayList<Bookings>();
+    public List<Events> fileReadBooking() throws FileNotFoundException {
+        List<Events> returnBookings = new ArrayList<Events>();
         Scanner sc = new Scanner(fileLocal);
 
         while(sc.hasNextLine()){
-            returnBookings.add(new Bookings());
+            returnBookings.add(new Events());
         }
 
         sc.close();
