@@ -4,6 +4,8 @@ import java.io.*;
 
 import BusinessLogicLayer.BookingList;
 
+// This class is going to be for serialization...
+
 public class FileHandeler {
     private BookingList booking;
 
@@ -23,6 +25,8 @@ public class FileHandeler {
 
     }
 
+    //Used for serialization...
+
     public void serializationReadWrite(BookingList booking) {
        try {
             FileOutputStream fos = new FileOutputStream("Bookings.ser");
@@ -37,6 +41,8 @@ public class FileHandeler {
            System.out.println("Serialized Failed...");
        }
     }
+
+    //Used for de-serialization...
 
     public BookingList serializationRead(){
         try {

@@ -2,6 +2,8 @@ package BusinessLogicLayer;
 
 import java.util.List;
 
+//This class is used for serialization and storing the objects...
+
 /**
  * BookingList
  */

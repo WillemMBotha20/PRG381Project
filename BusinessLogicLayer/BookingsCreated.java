@@ -1,9 +1,20 @@
 package BusinessLogicLayer;
 
+// This class merges the clients and events to creating one booking which makes it easier to store...
+
 public class BookingsCreated {
     
+    private String bookingId;    
     private Events clientEvent;
-    private ClientClass client;
+    private ClientClass client;    
+
+    public String getBookingId() {
+        return this.bookingId;
+    }
+
+    public void setBookingId(String bookingId) {
+        this.bookingId = bookingId;
+    }
 
     public Events getClientEvent() {
         return this.clientEvent;
@@ -21,13 +32,13 @@ public class BookingsCreated {
         this.client = client;
     }
    
-
     public BookingsCreated() {
+
     }
 
-
-    public BookingsCreated(Events clientEvent, ClientClass client) {
+    public BookingsCreated(Events clientEvent, ClientClass client, String bookingId) {
         this.clientEvent = clientEvent;
         this.client = client;
+        this.bookingId = bookingId;
     }    
 }
