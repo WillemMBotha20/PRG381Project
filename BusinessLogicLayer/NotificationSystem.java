@@ -2,12 +2,12 @@ package BusinessLogicLayer;
 
 public class NotificationSystem {
 
-    private BookinsgCreated booking;
+    private BookingsCreated booking;
 
     public NotificationSystem() {
     }
 
-    public NotificationSystem(BookinsgCreated booking) {
+    public NotificationSystem(BookingsCreated booking) {
         this.booking = booking;
     }
     

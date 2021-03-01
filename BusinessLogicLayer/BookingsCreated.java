@@ -1,6 +1,6 @@
 package BusinessLogicLayer;
 
-public class BookinsgCreated {
+public class BookingsCreated {
     
     private Events clientEvent;
     private ClientClass client;
@@ -22,11 +22,11 @@ public class BookinsgCreated {
     }
    
 
-    public BookinsgCreated() {
+    public BookingsCreated() {
     }
 
 
-    public BookinsgCreated(Events clientEvent, ClientClass client) {
+    public BookingsCreated(Events clientEvent, ClientClass client) {
         this.clientEvent = clientEvent;
         this.client = client;
     }    
