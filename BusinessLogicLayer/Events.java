@@ -12,7 +12,6 @@ public class Events {
         
     }
 
-
     public String EventType;
     public LocalDateTime EventDate;
     public String VenueName;
@@ -44,9 +43,6 @@ public class Events {
         this.EventDate = EventDate;
     };
 
-
-
-
     public String getVenueName()
     {
         return VenueName;
@@ -77,7 +73,7 @@ public class Events {
         this.VenueContact = VenueContact;
     };
     
-    public int AdultCount()
+    public int getAdultCount()
     {
         return AdultCount;
     };
@@ -87,7 +83,7 @@ public class Events {
         this.AdultCount = AdultCount;
     };
 
-    public int ChildCount()
+    public int getChildCount()
     {
         return AdultCount;
     };
