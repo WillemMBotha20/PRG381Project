@@ -1,37 +1,62 @@
 package DataAccesLayer;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.*;
+import java.io.*;
 
-import BusinessLogicLayer.Bookings;
+import BusinessLogicLayer.BookingList;
+
+// This class is going to be for serialization...
 
 public class FileHandeler {
-    private File fileLocal;
-    private Bookings dataStorage;
+    private BookingList booking;
 
-    public FileHandeler(File fileLocal, Bookings dataStorage) {
-        this.fileLocal = fileLocal;
-        this.dataStorage = dataStorage;
+    public FileHandeler(BookingList booking) {
+        this.booking = booking;
+    }
+
+    public BookingList getBooking() {
+        return this.booking;
+    }
+
+    public void setBooking(BookingList booking) {
+        this.booking = booking;
     }
 
     public FileHandeler() {
-    }
-
-    public void fileWriteBookings() {
 
     }
 
-    public List<Bookings> fileReadBooking() throws FileNotFoundException {
-        List<Bookings> returnBookings = new ArrayList<Bookings>();
-        Scanner sc = new Scanner(fileLocal);
+    //Used for serialization...
 
-        while(sc.hasNextLine()){
-            returnBookings.add(new Bookings());
-        }
+    public void serializationReadWrite(BookingList booking) {
+       try {
+            FileOutputStream fos = new FileOutputStream("Bookings.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(booking);
+            oos.close();
+            fos.close();
+            System.out.println("Serialized Successful...");
 
-        sc.close();
+       } catch (Exception e) {
+           //TODO: handle exception
+           System.out.println("Serialized Failed...");
+       }
+    }
 
-        return returnBookings;
+    //Used for de-serialization...
+
+    public BookingList serializationRead(){
+        try {
+            FileInputStream fos = new FileInputStream("Bookings.ser");
+            ObjectInputStream ois = new ObjectInputStream(fos);
+            BookingList bookSer = (BookingList) ois.readObject();
+            ois.close();
+            fos.close();
+            System.out.println("Serialized Successful...");
+            return bookSer;
+       } catch (Exception e) {
+           //TODO: handle exception
+           System.out.println("De-Serialized Failed...");
+           return null;
+       }
     }
 }

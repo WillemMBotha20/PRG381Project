@@ -1,24 +1,25 @@
+package BusinessLogicLayer;
 
 public class ClientClass {
-    private string Cname;
-    private string Csurname;
+    private String Cname;
+    private String Csurname;
     private int Cnumber;
 
-    public string getCname(){
+    public String getCname(){
         return Cname;
     }
 
-    public string getCsurname(){
+    public String getCsurname(){
         return Csurname;
     }
 
     public int getCnumber(){
         return Cnumber;
     }
-    public  Client(){
+    public  ClientClass(){
         
     }
-    public Client(String Cname , String Csurname, int Cnumber)
+    public ClientClass(String Cname , String Csurname, int Cnumber)
 	{
 		this.Cname = Cname;
 		this.Csurname = Csurname;
