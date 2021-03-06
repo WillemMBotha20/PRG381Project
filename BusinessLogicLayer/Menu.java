@@ -20,13 +20,23 @@ public class Menu {
         System.out.printf("Goodbye!");
     }
 
-    public static void AddEventPrint()
+    public void AddEventPrint()
     {
         System.out.println("Please choose one of the following: ");
         System.out.println("1. Add Client");
         System.out.println("2. Choose existing Client ");
-        System.out.println("3. Return ");
-        System.out.println("3. Exit ");  
+        System.out.println("3. Return");
+        System.out.println("4. Exit ");
 
+    }
+
+    public void ChooseClientPrint()
+    {
+        System.out.println("Choose one of the following clients:");
+    }
+
+    public void ViewEventsPrint()
+    {
+        System.out.println("Display all Event:");
     }
 }
