@@ -2,7 +2,7 @@ package BusinessLogicLayer;
 
 public class Menu {
     
-<<<<<<< HEAD
+
     public void MainMenuDisplay(){
 
         System.out.printf("Please select an option:%n0. Add new client%n1. view clients%n2. Add event%n3. View all events%n4. View all bookings%n5. Edit bookings%n");
@@ -18,7 +18,8 @@ public class Menu {
 
     public void GoodbyeDisplay(){
         System.out.printf("Goodbye!");
-=======
+    }
+
     public static void AddEventPrint()
     {
         System.out.println("Please choose one of the following: ");
@@ -26,6 +27,6 @@ public class Menu {
         System.out.println("2. Choose existing Client ");
         System.out.println("3. Return ");
         System.out.println("3. Exit ");  
->>>>>>> 4bd3b18613ab99fc5b7be07dec0076cf2458c8f9
+
     }
 }
