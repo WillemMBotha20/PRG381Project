@@ -159,6 +159,21 @@ public class Menu {
         }
 
         Eventinfo.setDecorations(Deco);
+
+        CreateBooking(client, Eventinfo);
+    }
+
+    public void CreateBooking(ClientClass client, Events events)
+    {
+        BookingsCreated bCreated = new BookingsCreated();
+        int length;
+        BookingList list = new BookingList();
+        length = list.getBookingList().size();
+        bCreated.setBookingId(length + 1);
+        bCreated.setClient(client);
+        bCreated.setClientEvent(events);
+        
+
     }
 
     public void ViewEventsPrint() throws FileNotFoundException
