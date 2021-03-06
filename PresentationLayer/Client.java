@@ -50,7 +50,7 @@ public class Client {
                     System.out.print(clear);  
                     System.out.flush();  
                     menu.AllBookingsMenuDisplay();                        
-                    
+
                     break;
                 case 5:
                     System.out.print(clear);  
@@ -65,9 +65,13 @@ public class Client {
                     System.out.print(clear);  
                     System.out.flush();
                     menu.GoodbyeDisplay(); 
-                    loopcontroll = false;                 
+                    loopcontroll = false;
+                    scan.close();                 
                     break;            
             }
-        }    
-    }    
+        } 
+           
+    }
+    
+    
 }

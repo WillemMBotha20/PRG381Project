@@ -41,7 +41,13 @@ public class Menu {
 
     public void ChooseClientPrint()
     {
-        System.out.println("Choose one of the following clients:");
+        System.out.println("Choose one of the following clients: %n");
+        BookingList book = filehand.serializationRead();
+        int i = 1;
+        for (BookingsCreated variable : book.getBookingList()){
+            System.out.printf("%i. %s %s %s",i,variable.getClient().getCname(),variable.getClient().getCsurname(),variable.getClient().getCnumber());
+            i++;
+        }
     }
 
     public void ViewEventsPrint()
