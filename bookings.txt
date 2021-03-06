@@ -1,5 +1,1 @@
-John,Babatista,0832839487,Party,19-01-2021,Gold,Yeet,Johnathan,10,15,#Drinks&Stuff
-John,Babatista,0832839487,Party,19-01-2021,Gold,Yeet,Johnathan,10,15,#Drinks&Stuff
-John,Babatista,0832839487,Party,19-01-2021,Gold,Yeet,Johnathan,10,15,#Drinks&Stuff
-John,Babatista,0832839487,Party,19-01-2021,Gold,Yeet,Johnathan,10,15,#Drinks&Stuff
-John,Babatista,0832839487,Party,19-01-2021,Gold,Yeet,Johnathan,10,15,#Drinks&Stuff
+Willem,Botha,000003213,Black,2021-01-18T08:08,Birth Party,Red,John,10,5,#1&2

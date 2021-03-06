@@ -25,14 +25,27 @@ public class FileHandeler {
         
     }
 
-    public void writeBooking(BookingsCreated booking) throws FileNotFoundException{   
+    public void writeBooking(BookingsCreated booking) throws FileNotFoundException{  
         
-        scan = new Scanner(tempfile);    
-
-        
-
-
+        String line = booking.getClient().getCname() + "," + booking.getClient().getCsurname() + "," + booking.getClient().getCnumber() + "," + booking.getClientEvent().getVenueName() + "," + booking.getClientEvent().getEventDate().toString() + "," + booking.getClientEvent().getEventType() + "," + booking.getClientEvent().getVenueAddress() + "," + booking.getClientEvent().getVenueContact() + "," + booking.getClientEvent().AdultCount + "," + booking.getClientEvent().ChildCount + ",";
     
+        for (String iterable_element : booking.getClientEvent().FoodSelection) {
+            line += "#" +iterable_element;
+        }
+
+        for (String iterable_element : booking.getClientEvent().Decorations) {
+            line += "&" +iterable_element;
+        }
+
+        try {
+            FileWriter myWriter = new FileWriter(tempfile,true);
+            myWriter.write(line + "\n");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+          } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+          }              
     }
 
     public BookingList readBooking() throws FileNotFoundException{
