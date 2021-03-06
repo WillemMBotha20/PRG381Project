@@ -21,7 +21,7 @@ public class Menu {
 
     public void MainMenuDisplay(){
 
-        System.out.printf("Please select an option:%n0. Add new client%n1. view clients%n2. Add event%n3. View all events%n4. View all bookings%n5. Edit bookings%n");
+        System.out.printf("Please select an option:%n0. Add new client%n1. view clients%n2. Add event%n3. View all events%n4. View all bookings%n5. Edit bookings%n6. Exit%n");
     }
 
 // Displaying all the bookings info
@@ -113,6 +113,8 @@ public class Menu {
 
     }
 
+// Choosing client method
+
     public void ChooseClientPrint() throws FileNotFoundException
     {
         System.out.println("Choose one of the following clients: %n");
@@ -130,6 +132,8 @@ public class Menu {
         sc.close();
         AddEvent(Client);
     }
+
+// Adding an event, this initiates where the client is chosen the event is created, questions asked and then the booking made.
 
     public void AddEvent(ClientClass client)
     {
@@ -231,6 +235,8 @@ public class Menu {
         Eventinfo.setDecorations(Deco);
     }
 
+//Printing all the events
+
     public void ViewEventsPrint() throws FileNotFoundException
     {
         System.out.println("Display all Event:");
@@ -254,6 +260,49 @@ public class Menu {
         System.out.printf("You did not select an option!%nPlease select one!");
     }
 
+// Adding a client
 
-    
+    public void AddClient(){
+        Scanner ClientInput = new Scanner(System.in);
+        
+        System.out.println("Enter Client's name");
+        String name =ClientInput.nextLine();
+        ClientClass ClientInfo = new ClientClass();
+        ClientInfo.setCname(name);
+        System.out.println("Enter Client's Surname");
+        String surname = ClientInput.nextLine();
+        ClientInfo.setCsurname(surname);
+        System.out.println("Enter Client's Telephone number");
+        String cellnumber = ClientInput.nextLine();
+        ClientInfo.setCnumber(cellnumber);
+    }
+
+// Test Method
+
+    public void testMeth() throws FileNotFoundException{
+        List<String> tester1 = new ArrayList<String>();
+        List<String> tester2 = new ArrayList<String>();
+        tester1.add("1");
+        tester2.add("2");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime dateTime = LocalDateTime.parse("2021-01-18 08:08", formatter);
+
+        ClientClass cl = new ClientClass("Willem","Botha","000003213");
+        Events ev = new Events("Birth Party",dateTime,"Black","Red","John",10,5,tester1,tester2);
+                    
+        BookingsCreated temp = new BookingsCreated(0,cl,ev);
+
+        FileHandeler hand = new FileHandeler();
+
+        hand.writeBooking(temp);        
+    } 
+
+// Displaying all clients
+
+    public void showClients() throws FileNotFoundException{
+        System.out.println("Showing all the clients:%n");
+        for (ClientClass iterable_element : filehand.GetClients()) {
+            System.out.printf("Name: %s%nSurname: s%%nCell Number: %s%n",iterable_element.getCname(),iterable_element.getCsurname(),iterable_element.getCnumber());
+        }
+    }   
 }

@@ -18,12 +18,15 @@ public class FileHandeler {
     private BookingList readingData;
     private BookingsCreated writingData;
     File tempfile = new File("bookings.txt");
+    File clientfile = new File("Clients.txt");
     private Scanner scan;
     int id = 1;
 
     public FileHandeler() {
         
     }
+
+//  Writing the object to a textfile.
 
     public void writeBooking(BookingsCreated booking) throws FileNotFoundException{  
         
@@ -47,6 +50,8 @@ public class FileHandeler {
             e.printStackTrace();
           }              
     }
+
+// Reading from the textfile into an object.
 
     public BookingList readBooking() throws FileNotFoundException{
 
@@ -81,5 +86,36 @@ public class FileHandeler {
         BookingList book = new BookingList(temporaryList);
 
         return book;
+    }
+
+// Writing the clients to a textfile
+
+    public void WriteClient(ClientClass clientC) throws IOException{
+        String Client = clientC.getCname()+","+clientC.getCsurname()+","+clientC.getCnumber();
+        FileWriter myFileWriter = new FileWriter(clientfile,true);
+       try{
+        myFileWriter.write(Client + "\n");
+        myFileWriter.close();
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
+    }
+
+// Reading from the client textfile
+
+    public List<ClientClass> GetClients() throws FileNotFoundException{
+
+        List<ClientClass> clientlist = new ArrayList<ClientClass>();	
+		Scanner clientreader = new Scanner(clientfile);		
+		while(clientreader.hasNextLine())
+		{
+			String[] line = clientreader.nextLine().split(",");
+			
+			clientlist.add(new ClientClass(line[0], line[1], line[2]));
+		}
+
+        return clientlist;        
     }
 }

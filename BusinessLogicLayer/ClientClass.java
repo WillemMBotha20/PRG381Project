@@ -1,5 +1,10 @@
 package BusinessLogicLayer;
 
+import java.io.FileNotFoundException;
+import java.util.List;
+
+import DataAccesLayer.FileHandeler;
+
 public class ClientClass {
     private String Cname;
     private String Csurname;
@@ -52,4 +57,20 @@ public class ClientClass {
         setCnumber(Cnumber);
         return this;
     }
+
+    public List<ClientClass> ClientInfo() throws FileNotFoundException
+	{
+		FileHandeler clientnfo = new FileHandeler();
+		
+		List<ClientClass> clientlist = clientnfo.GetClients();
+		
+		if(!clientlist.isEmpty())
+		{
+			return clientlist;
+		}
+		else
+		{
+			return null;
+		}
+	}
 }
