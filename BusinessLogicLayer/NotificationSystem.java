@@ -1,13 +1,16 @@
 package BusinessLogicLayer;
 
+// The idea is for this class is to be able to send notifactions to the correct users...
+// This include emails or message via a phone number...
+
 public class NotificationSystem {
 
-    private BookinsgCreated booking;
+    private BookingsCreated booking;
 
     public NotificationSystem() {
     }
 
-    public NotificationSystem(BookinsgCreated booking) {
+    public NotificationSystem(BookingsCreated booking) {
         this.booking = booking;
     }
     
