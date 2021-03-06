@@ -1,17 +1,9 @@
 package PresentationLayer;
 
 import java.io.FileNotFoundException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
-import BusinessLogicLayer.BookingsCreated;
-import BusinessLogicLayer.ClientClass;
-import BusinessLogicLayer.Events;
 import BusinessLogicLayer.Menu;
-import DataAccesLayer.FileHandeler;
+
 
 /**
  * Client This Is Just Temporary
@@ -36,7 +28,7 @@ public class Client {
             String option = scan.nextLine();
 
             if (option.isEmpty()) {
-                option = "8";
+                option = "9";
             }
 
             switch (Integer.parseInt(option)) {
@@ -74,18 +66,22 @@ public class Client {
                     break;  
                 case 6:
                     System.out.print(clear);  
+                    System.out.flush(); 
+                    menu.bookingProg();
+                    scan.nextLine();
+                    break;
+                case 7:
+                    System.out.print(clear);  
                     System.out.flush();
                     menu.GoodbyeDisplay(); 
-                    loopcontroll = false;
-                    scan.close();  
+                    loopcontroll = false;                    
                     break; 
-                case 7:                    
+                case 8:                    
                     // Testing the writer
                     menu.testMeth();
-                    scan.nextLine();               
-                    scan.close();                 
+                    scan.nextLine();                                   
                     break;
-                case 8:
+                case 9:
                     System.out.print(clear);  
                     System.out.flush();
                     menu.NoOption();     
@@ -93,8 +89,7 @@ public class Client {
                 break;
             }
         } 
-           
-    }
-    
-    
+
+        scan.close();            
+    }     
 }

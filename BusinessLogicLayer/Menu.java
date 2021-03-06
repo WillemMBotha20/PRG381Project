@@ -19,7 +19,7 @@ public class Menu {
 
     public void MainMenuDisplay(){
 
-        System.out.printf("Please select an option:%n0. Add new client%n1. view clients%n2. Add event%n3. View all events%n4. View all bookings%n5. Edit bookings%n6. Exit%n");
+        System.out.printf("Please select an option:%n0. Add new client%n1. view clients%n2. Add event%n3. View all events%n4. View all bookings%n5. Edit bookings%n6. View Bookings Progress%n7. Exit%n");
     }
 
 // Displaying all the bookings info
@@ -320,4 +320,27 @@ public class Menu {
             System.out.printf("Name: %s%nSurname: s%%nCell Number: %s%n",iterable_element.getCname(),iterable_element.getCsurname(),iterable_element.getCnumber());
         }
     }   
+
+// Showing bookings with progress
+
+    public void bookingProg() throws FileNotFoundException{
+        System.out.printf("Displaying All Bookings: %n");        
+        BookingList book = filehand.readBooking();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now(); 
+        String prog = "";
+
+        for (BookingsCreated variable : book.getBookingList()){
+
+            if(variable.getClientEvent().getEventDate().isAfter(now)){
+                prog = "Past Booking...";
+            }else if(variable.getClientEvent().getEventDate().isBefore(now)){
+                prog = "Upcomming Booking...";
+            }else{
+                prog = "In Progres...";
+            }
+            System.out.printf("%s %s %s\n",variable.getClient().getCname(),variable.getClientEvent().getEventType(),prog);
+        }
+    }
+
 }
