@@ -27,16 +27,24 @@ public class Client {
             String option = scan.nextLine();
             switch (Integer.parseInt(option)) {
                 case 0:
-                    
+                    System.out.print(clear);  
+                    System.out.flush();
+
                     break;
                 case 1:
-                    
+                    System.out.print(clear);  
+                    System.out.flush();
+
                     break;
                 case 2:
-                    
+                    System.out.print(clear);  
+                    System.out.flush();
+                    menu.AddEventPrint();
                     break;
                 case 3:
-                    
+                    System.out.print(clear);  
+                    System.out.flush();
+                    menu.ViewEventsPrint();
                     break;
                 case 4:
                     System.out.print(clear);  
