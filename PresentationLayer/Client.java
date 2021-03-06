@@ -27,13 +27,18 @@ public class Client {
         
         Scanner scan = new Scanner(System.in);        
         boolean loopcontroll = true;    
-        Menu menu = new Menu();
+        Menu menu = new Menu();        
 
         // Creating the loop that 
 
         while(loopcontroll == true) {           
-            menu.MainMenuDisplay();
+            menu.MainMenuDisplay();        
             String option = scan.nextLine();
+
+            if (option.isEmpty()) {
+                option = "8";
+            }
+
             switch (Integer.parseInt(option)) {
                 case 0:
                     System.out.print(clear);  
@@ -65,7 +70,7 @@ public class Client {
                     System.out.print(clear);  
                     System.out.flush();  
                     menu.EditBookingsDisplay();
-                    
+                    scan.nextLine();                      
                     break;  
                 case 6:
 
@@ -94,7 +99,13 @@ public class Client {
                     System.out.flush();
                     menu.GoodbyeDisplay(); 
                     loopcontroll = false;                 
-                    break;            
+                    break;
+                case 8:
+                    System.out.print(clear);  
+                    System.out.flush();
+                    menu.NoOption();     
+                    scan.nextLine();                                                   
+                break;
             }
         }    
     }    
