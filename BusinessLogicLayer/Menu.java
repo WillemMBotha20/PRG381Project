@@ -16,6 +16,7 @@ public class Menu {
      */
     private static final String ENTER_INFO_N = "Enter Info:%n";
     FileHandeler filehand = new FileHandeler();
+     ClientClass ClientInfo = new ClientClass();
 
     public void MainMenuDisplay(){
 
@@ -102,13 +103,26 @@ public class Menu {
         System.out.printf("Goodbye!");
     }
 
-    public void AddEventPrint()
+    public void AddEventPrint() throws FileNotFoundException
     {
+        Scanner sc = new Scanner(System.in);
+        int option;
         System.out.println("Please choose one of the following: ");
         System.out.println("1. Add Client");
         System.out.println("2. Choose existing Client ");
-        System.out.println("3. Return");
-        System.out.println("4. Exit ");
+
+        option = sc.nextInt();
+        switch (option) {
+            case 1:
+                AddClient();  
+                AddEvent(ClientInfo);
+                break;
+            case 2:
+                ChooseClientPrint();
+                break;
+            default:
+                break;
+        }
 
     }
 
@@ -136,6 +150,7 @@ public class Menu {
 
     public void AddEvent(ClientClass client)
     {
+        
         String input = "";
         int count;
         String Date;
@@ -232,6 +247,8 @@ public class Menu {
         }
 
         Eventinfo.setDecorations(Deco);
+        System.out.println("Event created...");
+        System.out.println("Booking create started...");
 
         CreateBooking(client, Eventinfo);
         sc.close();
@@ -246,6 +263,8 @@ public class Menu {
         bCreated.setBookingId(length + 1);
         bCreated.setClient(client);
         bCreated.setClientEvent(events);
+
+        System.out.println("Booking Created...");
         
 
     }
@@ -277,12 +296,11 @@ public class Menu {
 
 // Adding a client
 
-    public void AddClient(){
+    public ClientClass AddClient(){
         Scanner ClientInput = new Scanner(System.in);
         
         System.out.println("Enter Client's name");
         String name =ClientInput.nextLine();
-        ClientClass ClientInfo = new ClientClass();
         ClientInfo.setCname(name);
         System.out.println("Enter Client's Surname");
         String surname = ClientInput.nextLine();
@@ -290,6 +308,9 @@ public class Menu {
         System.out.println("Enter Client's Telephone number");
         String cellnumber = ClientInput.nextLine();
         ClientInfo.setCnumber(cellnumber);
+        ClientInput.close();
+        return ClientInfo;
+        
     }
 
 // Test Method
