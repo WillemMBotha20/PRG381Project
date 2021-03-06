@@ -63,8 +63,13 @@ public class Client {
                 case 4:
                     System.out.print(clear);  
                     System.out.flush();  
+
+                    menu.AllBookingsMenuDisplay();                        
+
+
                     menu.AllBookingsMenuDisplay();  
                     scan.nextLine();                     
+
                     break;
                 case 5:
                     System.out.print(clear);  
@@ -98,6 +103,11 @@ public class Client {
                     System.out.print(clear);  
                     System.out.flush();
                     menu.GoodbyeDisplay(); 
+
+                    loopcontroll = false;
+                    scan.close();                 
+                    break;            
+
                     loopcontroll = false;                 
                     break;
                 case 8:
@@ -107,6 +117,9 @@ public class Client {
                     scan.nextLine();                                                   
                 break;
             }
-        }    
-    }    
+        } 
+           
+    }
+    
+    
 }
