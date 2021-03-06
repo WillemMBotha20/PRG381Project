@@ -43,12 +43,12 @@ public class Client {
                 case 0:
                     System.out.print(clear);  
                     System.out.flush();
-
+                    menu.AddClient();
                     break;
                 case 1:
                     System.out.print(clear);  
                     System.out.flush();
-
+                    menu.showClients();
                     break;
                 case 2:
                     System.out.print(clear);  
@@ -63,13 +63,8 @@ public class Client {
                 case 4:
                     System.out.print(clear);  
                     System.out.flush();  
-
-                    menu.AllBookingsMenuDisplay();                        
-
-
-                    menu.AllBookingsMenuDisplay();  
+                    menu.AllBookingsMenuDisplay();                      
                     scan.nextLine();                     
-
                     break;
                 case 5:
                     System.out.print(clear);  
@@ -78,33 +73,16 @@ public class Client {
                     scan.nextLine();                      
                     break;  
                 case 6:
-
-                // Testing the writer
-
-                    List<String> tester1 = new ArrayList<String>();
-                    List<String> tester2 = new ArrayList<String>();
-                    tester1.add("1");
-                    tester2.add("2");
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-                    LocalDateTime dateTime = LocalDateTime.parse("2021-01-18 08:08", formatter);
-
-                    ClientClass cl = new ClientClass("Willem","Botha","000003213");
-                    Events ev = new Events("Birth Party",dateTime,"Black","Red","John",10,5,tester1,tester2);
-                    
-                    BookingsCreated temp = new BookingsCreated(0,cl,ev);
-
-                    FileHandeler hand = new FileHandeler();
-
-                    hand.writeBooking(temp);
-
-                    scan.nextLine(); 
-                    break; 
-                case 7:
                     System.out.print(clear);  
                     System.out.flush();
                     menu.GoodbyeDisplay(); 
-
                     loopcontroll = false;
+                    scan.close();  
+                    break; 
+                case 7:                    
+                    // Testing the writer
+                    menu.testMeth();
+                    scan.nextLine();               
                     scan.close();                 
                     break;
                 case 8:
