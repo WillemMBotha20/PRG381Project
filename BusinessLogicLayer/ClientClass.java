@@ -3,7 +3,7 @@ package BusinessLogicLayer;
 public class ClientClass {
     private String Cname;
     private String Csurname;
-    private int Cnumber;
+    private String Cnumber;
 
     public String getCname(){
         return Cname;
@@ -13,13 +13,13 @@ public class ClientClass {
         return Csurname;
     }
 
-    public int getCnumber(){
+    public String getCnumber(){
         return Cnumber;
     }
     public  ClientClass(){
         
     }
-    public ClientClass(String Cname , String Csurname, int Cnumber)
+    public ClientClass(String Cname , String Csurname, String Cnumber)
 	{
 		this.Cname = Cname;
 		this.Csurname = Csurname;
