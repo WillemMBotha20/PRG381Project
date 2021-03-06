@@ -106,9 +106,6 @@ public class Client {
 
                     loopcontroll = false;
                     scan.close();                 
-                    break;            
-
-                    loopcontroll = false;                 
                     break;
                 case 8:
                     System.out.print(clear);  
