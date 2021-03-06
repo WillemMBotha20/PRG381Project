@@ -1,5 +1,6 @@
 package BusinessLogicLayer;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import DataAccesLayer.FileHandeler;
@@ -13,11 +14,11 @@ public class Menu {
         System.out.printf("Please select an option:%n0. Add new client%n1. view clients%n2. Add event%n3. View all events%n4. View all bookings%n5. Edit bookings%n");
     }
 
-    public void AllBookingsMenuDisplay(){
-        System.out.printf("Displaying All Bookings: %n");
-        BookingList book = filehand.serializationRead();
+    public void AllBookingsMenuDisplay() throws FileNotFoundException{
+        System.out.printf("Displaying All Bookings: %n");        
+        BookingList book = filehand.readBooking();
         for (BookingsCreated variable : book.getBookingList()){
-            System.out.printf("%s %s %s",variable.getClient().getCname(),variable.getClient().getCsurname(),variable.getClient().getCnumber());
+            System.out.printf("%s %s %s %s %s\n",variable.getClient().getCname(),variable.getClient().getCsurname(),variable.getClient().getCnumber(),variable.getClientEvent().VenueName,variable.getClientEvent().getVenueAddress());
         }
     }
 

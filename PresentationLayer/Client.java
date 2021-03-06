@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import BusinessLogicLayer.Menu;
@@ -14,7 +15,7 @@ public class Client {
      */
     private static final String clear = "\033[H\033[2J";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         
         Scanner scan = new Scanner(System.in);        
         boolean loopcontroll = true;    
@@ -49,7 +50,12 @@ public class Client {
                 case 4:
                     System.out.print(clear);  
                     System.out.flush();  
+
                     menu.AllBookingsMenuDisplay();                        
+
+
+                    menu.AllBookingsMenuDisplay();  
+                    scan.nextLine();                     
 
                     break;
                 case 5:

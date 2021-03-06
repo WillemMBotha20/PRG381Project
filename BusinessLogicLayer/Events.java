@@ -22,7 +22,6 @@ public class Events {
     public List<String> FoodSelection;
     public List<String> Decorations;
     
-
     public String getEventType()
     {
         return EventType;
