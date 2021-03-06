@@ -51,7 +51,7 @@ public class FileHandeler {
             BookingList bookSer = (BookingList) ois.readObject();
             ois.close();
             fos.close();
-            System.out.println("Serialized Successful...");
+            System.out.println("De-Serialized Successful...");
             return bookSer;
        } catch (Exception e) {
            //TODO: handle exception
