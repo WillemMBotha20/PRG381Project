@@ -4,15 +4,15 @@ package BusinessLogicLayer;
 
 public class BookingsCreated {
     
-    private String bookingId;    
+    private int bookingId;    
     private Events clientEvent;
     private ClientClass client;    
 
-    public String getBookingId() {
+    public int getBookingId() {
         return this.bookingId;
     }
 
-    public void setBookingId(String bookingId) {
+    public void setBookingId(int bookingId) {
         this.bookingId = bookingId;
     }
 
@@ -36,7 +36,7 @@ public class BookingsCreated {
 
     }
 
-    public BookingsCreated(Events clientEvent, ClientClass client, String bookingId) {
+    public BookingsCreated(int bookingId, ClientClass client, Events clientEvent) {
         this.clientEvent = clientEvent;
         this.client = client;
         this.bookingId = bookingId;
