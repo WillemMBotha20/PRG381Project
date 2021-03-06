@@ -20,7 +20,7 @@ public class Menu {
         System.out.printf("Goodbye!");
     }
 
-    public static void AddEventPrint()
+    public void AddEventPrint()
     {
         System.out.println("Please choose one of the following: ");
         System.out.println("1. Add Client");
@@ -28,5 +28,10 @@ public class Menu {
         System.out.println("3. Return ");
         System.out.println("3. Exit ");  
 
+    }
+
+    public void ViewEventsPrint()
+    {
+        System.out.println("Display all Event:");
     }
 }
