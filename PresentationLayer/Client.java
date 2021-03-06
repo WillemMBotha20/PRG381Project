@@ -42,7 +42,7 @@ public class Client {
                     System.out.print(clear);  
                     System.out.flush();  
                     menu.AllBookingsMenuDisplay();                        
-
+                    
                     break;
                 case 5:
                     System.out.print(clear);  

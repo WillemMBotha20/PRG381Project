@@ -1,7 +1,12 @@
 package BusinessLogicLayer;
 
+import java.util.ArrayList;
+
+import DataAccesLayer.FileHandeler;
+
 public class Menu {
     
+    FileHandeler filehand = new FileHandeler();
 
     public void MainMenuDisplay(){
 
@@ -9,7 +14,11 @@ public class Menu {
     }
 
     public void AllBookingsMenuDisplay(){
-        System.out.printf("Displaying All Bookings:");
+        System.out.printf("Displaying All Bookings: %n");
+        BookingList book = filehand.serializationRead();
+        for (BookingsCreated variable : book.getBookingList()){
+            System.out.printf("%s %s %s",variable.getClient().getCname(),variable.getClient().getCsurname(),variable.getClient().getCnumber());
+        }
     }
 
     public void EditBookingsDisplay(){
