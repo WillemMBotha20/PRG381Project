@@ -1,8 +1,6 @@
 package BusinessLogicLayer;
 
 import java.io.FileNotFoundException;
-
-import java.sql.Time;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -96,7 +94,8 @@ public class Menu {
             case 2:
                 System.out.print("Changed Nothing!");
                 break;
-        }       
+        }
+        sc.close();      
     }
 
     public void GoodbyeDisplay(){
@@ -233,6 +232,22 @@ public class Menu {
         }
 
         Eventinfo.setDecorations(Deco);
+
+        CreateBooking(client, Eventinfo);
+        sc.close();
+    }
+
+    public void CreateBooking(ClientClass client, Events events)
+    {
+        BookingsCreated bCreated = new BookingsCreated();
+        int length;
+        BookingList list = new BookingList();
+        length = list.getBookingList().size();
+        bCreated.setBookingId(length + 1);
+        bCreated.setClient(client);
+        bCreated.setClientEvent(events);
+        
+
     }
 
 //Printing all the events

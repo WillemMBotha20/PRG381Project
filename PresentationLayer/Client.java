@@ -82,8 +82,9 @@ public class Client {
                 case 7:                    
                     // Testing the writer
                     menu.testMeth();
-                    scan.nextLine();                
-                    break;           
+                    scan.nextLine();               
+                    scan.close();                 
+                    break;
                 case 8:
                     System.out.print(clear);  
                     System.out.flush();
